@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 var op = process.argv[2],
-	num1 = parseInt(process.argv[3], 10),
-	num2 = parseInt(process.argv[4], 10),
+	num1 = +process.argv[3],
+	num2 = +process.argv[4],
 	result;
 
 if (op == "add") {
