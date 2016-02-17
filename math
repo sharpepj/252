@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var op = process.argv[2];
+var num1 = parseInt(process.argv[3], 10);
+var num2 = parseInt(process.argv[4], 10);
+var result;
+
+if (op == "add") {
+	result = num1 + num2;
+	op = "+";
+}
+else if (op == "subtract") {
+	result = num1 - num2;
+	op = "-";
+}
+else if (op == "multiply") {
+	result = num1 * num2;
+	op = "*";
+}
+else if (op == "divide") {
+	result = num1 / num2;
+	op = "/";
+}
+console.log(num1 + " " + op + " " + num2 + " = " + result);
