@@ -1,25 +1,7 @@
-#!/usr/bin/env node
+exports.add = function(a, b) {
+	return a + b;
+};
 
-var op = process.argv[2],
-	num1 = +process.argv[3],
-	num2 = +process.argv[4],
-	result;
-
-if (op == "add") {
-	result = num1 + num2;
-	op = "+";
-}
-else if (op == "subtract") {
-	result = num1 - num2;
-	op = "-";
-}
-else if (op == "multiply") {
-	result = num1 * num2;
-	op = "*";
-}
-else if (op == "divide") {
-	result = num1 / num2;
-	op = "/";
-}
-console.log(result);
-//console.log(num1 + " " + op + " " + num2 + " = " + result);
+exports.subtract = function(a, b) {
+	return a - b;
+};
