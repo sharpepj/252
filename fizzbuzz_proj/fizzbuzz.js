@@ -33,4 +33,4 @@ exports.fizzbuzz = function(start, end) {
 	return output;
 };
 
-console.log(fizzbuzz(1,100));
+
