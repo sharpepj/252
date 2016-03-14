@@ -15,18 +15,19 @@ exports.fizzbuzz = function(start, end) {
 	
 	var output = start;
 
-	for (var i = start; i < end; i += 1) {
+	for (var i = start+1; i <= end; i += 1) {
 	
-		if (i % 3 == 0 && i % 5 == 0) {
-			output = output + " " = ("fizzbuzz");
+		if (i % 3 === 0 && i % 5 === 0) {
+			output = output + " " + ("fizzbuzz");
 		}
-		else if (i % 3 == 00 {
-			output = output + " " = ("fizz");
+		else if (i % 3 === 0) {
+			output = output + " " + ("fizz");
 		}
-		else if (i % 5 == 0) {
-			output = output + " " = ("buzz");
-		} else {
-			output = output + " " + (i + 1);	
+		else if (i % 5 === 0) {
+			output = output + " " + ("buzz");
+		} 
+		else {
+			output = output + " " + (i);	
 		}
 		
 	}
