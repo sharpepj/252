@@ -13,21 +13,25 @@ exports.count = function(start, end) {
 
 exports.fizzbuzz = function(start, end) {
 	
-	var output = start;
+	var output = "";
 
-	for (var i = start+1; i <= end; i += 1) {
+	for (var i = start; i <= end; i += 1) {
 	
 		if (i % 3 === 0 && i % 5 === 0) {
-			output = output + " " + ("fizzbuzz");
+			output += ("fizzbuzz");
 		}
 		else if (i % 3 === 0) {
-			output = output + " " + ("fizz");
+			output +=  ("fizz");
 		}
 		else if (i % 5 === 0) {
-			output = output + " " + ("buzz");
+			output += ("buzz");
 		} 
 		else {
-			output = output + " " + (i);	
+			output += (i);	
+		}
+
+		if(i != end) {
+			output += " ";
 		}
 		
 	}

@@ -23,7 +23,7 @@ describe("A fizzbuzz program", function() {
 	});
 
 	it("can do fizzbuzz from 26 to 30", function() {
-		expect(fb.fizzbuzz(26, 30).toBe("26 fizz 28 29 fizzbuzz");
+		expect(fb.fizzbuzz(26, 30)).toBe("26 fizz 28 29 fizzbuzz");
 	});
 
 	it("can do fizzbuzz from 31 to 35", function() {
