@@ -27,7 +27,7 @@ exports.fizzbuzz = function(start, end) {
 			output += ("buzz");
 		} 
 		else {
-			output += (i);	
+			output += i;	
 		}
 
 		if(i != end) {
