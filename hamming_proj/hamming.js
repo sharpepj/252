@@ -11,7 +11,7 @@ compute = function(strand1, strand2) {
 		}
 
 	} else {
-		throw new Error('DNA strands must be of equal length.');
+		throw new Error("DNA strands must be of equal length.");
 	}
 	return count;
 }
