@@ -32,8 +32,46 @@ var Crypto = function(text) {
 		return size;
 	}
 
+	/* The plaintextSegments function breaks up the plaintext
+	* string into an array of segmented strings where the length
+	* of each segment is based on the size from the size
+	* function until it runs out of characters to pull from
+	* the normalized plaintext string.
+	*/
 	this.plaintextSegments = function() {
+		var output = [];
+		var size = this.size();
+		var text = this.normal_text;
+		
+		for (var i = 0; i < size; i++) {
+			var str = "";
+			for (var j = 0; j < size; j++) {
+				str += text.charAt(j);
+			}
+			output[i] = str;
+			text = text.substring(size);
+		}
+		return output;
+	}
+
+	this.segments = this.plaintextSegments();
+
+	/* The ciphertext function takes the plaintext segments
+	* and encrypts them into ciphertext, grouping the new
+	* words with the same index of each word together.
+	* For example the first letter in every word is the first
+	* word then the second letter in every word is the second
+	* word and so on and so forth
+	*/
+	this.ciphertext = function() {
+		var seg = this.segments;
 		var output = "";
+		for (var i = 0; i < seg.length; i++) {
+			for (var j = 0; j < seg.length; j++) {
+				output += seg[j].charAt(i);
+			}
+		}
+		return output;
 	}
 };
 
