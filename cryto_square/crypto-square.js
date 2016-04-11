@@ -27,7 +27,7 @@ var Crypto = function(text) {
 	this.size = function() {
 		size =  Math.sqrt(this.normal_text.length);
 		if (size % 1 != 0) {
-			size = Math.floor(size)+1;
+			size = Math.ceil(size);
 		}
 		return size;
 	}
