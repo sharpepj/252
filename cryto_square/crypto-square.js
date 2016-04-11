@@ -44,12 +44,14 @@ var Crypto = function(text) {
 		var text = this.normal_text;
 		
 		for (var i = 0; i < size; i++) {
+			if(text != "") {
 			var str = "";
-			for (var j = 0; j < size; j++) {
-				str += text.charAt(j);
-			}
+				for (var j = 0; j < size; j++) {
+					str += text.charAt(j);
+				}
 			output[i] = str;
 			text = text.substring(size);
+			}
 		}
 		return output;
 	}
