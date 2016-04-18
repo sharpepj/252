@@ -9,7 +9,7 @@ var Crypto = function(text) {
 		return this.orig_text.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
 	}
 
-	this.normal_text = this.normalizePlaintext();
+	//this.normal_text = this.normalizePlaintext();
 
 	/* The size function returns the size of the square
 	* if the length is a perfect square then the
@@ -25,7 +25,7 @@ var Crypto = function(text) {
 	*/
 
 	this.size = function() {
-		size =  Math.sqrt(this.normal_text.length);
+		size =  Math.sqrt(this.normalizePlaintext().length);
 		if (size % 1 != 0) {
 			size = Math.ceil(size);
 		}
@@ -41,7 +41,7 @@ var Crypto = function(text) {
 	this.plaintextSegments = function() {
 		var output = [];
 		var size = this.size();
-		var text = this.normal_text;
+		var text = this.normalizePlaintext();
 		
 		for (var i = 0; i < size; i++) {
 			if(text != "") {
@@ -56,7 +56,7 @@ var Crypto = function(text) {
 		return output;
 	}
 
-	this.segments = this.plaintextSegments();
+	//this.segments = this.plaintextSegments();
 
 	/* The ciphertext function takes the plaintext segments
 	* and encrypts them into ciphertext, grouping the new
@@ -66,7 +66,7 @@ var Crypto = function(text) {
 	* word and so on and so forth
 	*/
 	this.ciphertext = function() {
-		var seg = this.segments;
+		var seg = this.plaintextSegments();
 		var output = "";
 		for (var i = 0; i < seg.length; i++) {
 			for (var j = 0; j < seg.length; j++) {
