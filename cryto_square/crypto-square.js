@@ -36,21 +36,16 @@ var Crypto = function(text) {
 	* function until it runs out of characters to pull from
 	* the normalized plaintext string.
 	*/
+
 	this.plaintextSegments = function() {
 		var output = [];
 		var size = this.size();
 		var text = this.normalizePlaintext();
-		
-		for (var i = 0; i < size; i++) {
-			if(text != "") {
-			var str = "";
-				for (var j = 0; j < size; j++) {
-					str += text.charAt(j);
-				}
-			output[i] = str;
-			text = text.substring(size);
-			}
+
+		for(var i = 0; i < text.length; i += size) {
+			output.push(text.substr(i, size));
 		}
+
 		return output;
 	}
 
@@ -64,6 +59,7 @@ var Crypto = function(text) {
 	this.ciphertext = function() {
 		var seg = this.plaintextSegments();
 		var output = "";
+		
 		for (var i = 0; i < seg.length; i++) {
 			for (var j = 0; j < seg.length; j++) {
 				output += seg[j].charAt(i);
