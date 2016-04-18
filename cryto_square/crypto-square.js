@@ -1,15 +1,13 @@
 var Crypto = function(text) {
-	this.orig_text = text;
+	this.text = text;
 
 	/* The normalizePlaintext function removes
 	* spaces, punctuation, and the message is downcased
 	*/
 
 	this.normalizePlaintext = function() {
-		return this.orig_text.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
+		return this.text.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
 	}
-
-	//this.normal_text = this.normalizePlaintext();
 
 	/* The size function returns the size of the square
 	* if the length is a perfect square then the
@@ -55,8 +53,6 @@ var Crypto = function(text) {
 		}
 		return output;
 	}
-
-	//this.segments = this.plaintextSegments();
 
 	/* The ciphertext function takes the plaintext segments
 	* and encrypts them into ciphertext, grouping the new
